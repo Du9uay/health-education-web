@@ -32,7 +32,11 @@
       "Read(//Users/apple/Documents/cursor/Web课件/大健康/**)",
       "Bash(npx tsc:*)",
       "Bash(xargs kill:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Read(//Users/apple/Documents/cursor/Web课件/文旅/垂直能力提升二：商业活动策划/education_web_展会主题与品牌定位_新/src/pages/**)",
+      "Read(//Users/apple/Documents/cursor/Web课件/文旅/垂直能力提升二：商业活动策划/education_web_展会主题与品牌定位_新/src/components/**)",
+      "Read(//Users/apple/Documents/cursor/Web课件/文旅/垂直能力提升二：商业活动策划/education_web_展会主题与品牌定位_新/**)"
     ],
     "deny": []
   }
