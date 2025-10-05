@@ -1,0 +1,381 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+/* 健康管理主题色彩系统 */
+:root {
+  /* 主色调 - 健康绿色系 */
+  --primary-mint: #52e5a3;      /* 薄荷绿 */
+  --primary-sage: #87ceaa;       /* 鼠尾草绿 */
+  --primary-jade: #00a97f;       /* 翡翠绿 */
+  
+  /* 次要色调 - 活力蓝色系 */
+  --secondary-sky: #87ceeb;      /* 天空蓝 */
+  --secondary-ocean: #5bb4d9;    /* 海洋蓝 */
+  --secondary-ice: #b3d9f2;      /* 冰蓝 */
+  
+  /* 辅助色调 - 温暖色系 */
+  --accent-peach: #ffd4b3;       /* 蜜桃色 */
+  --accent-coral: #ff9980;       /* 珊瑚色 */
+  --accent-lavender: #c4b5fd;    /* 薰衣草 */
+  
+  /* 玻璃效果色彩 */
+  --glass-white: rgba(255, 255, 255, 0.08);
+  --glass-green: rgba(134, 239, 172, 0.12);
+  --glass-blue: rgba(147, 197, 253, 0.12);
+  --glass-purple: rgba(196, 181, 253, 0.08);
+  
+  /* 文本色彩 */
+  --text-primary: #1a3d2a;       /* 深绿色文字 */
+  --text-secondary: #4a6358;     /* 次要文字 */
+  --text-light: #6b8579;         /* 浅色文字 */
+  --text-white: #ffffff;         /* 白色文字 */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #e8f5e9 0%, #e1f5fe 50%, #f3e5f5 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* 统一的按钮样式 */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-mint), var(--primary-jade));
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 8px 24px rgba(212,180,131,0.24);
+}
+.btn-primary:active {
+  filter: brightness(0.97);
+}
+.btn-primary:focus {
+  outline: none;
+}
+
+/* 液态玻璃卡片效果 */
+.liquid-card {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.15) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(31, 38, 135, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 -20px 40px -20px rgba(134, 239, 172, 0.1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.liquid-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.5) 50%, 
+    transparent);
+}
+.liquid-card:hover {
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 
+    0 12px 48px rgba(31, 38, 135, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 -20px 40px -20px rgba(134, 239, 172, 0.15);
+}
+
+/* 液态玻璃效果系列 */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+/* 健康主题玻璃按钮 */
+.health-btn {
+  background: linear-gradient(135deg, var(--primary-mint), var(--primary-jade));
+  color: white;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 15px rgba(82, 229, 163, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.health-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+.health-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(82, 229, 163, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.health-btn:hover::before {
+  left: 100%;
+}
+
+/* 健康指标卡片 */
+.health-card {
+  background: linear-gradient(135deg, 
+    rgba(134, 239, 172, 0.1) 0%, 
+    rgba(147, 197, 253, 0.1) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.health-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 20s infinite linear;
+}
+@keyframes float {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*/* 交互态统一样式 */
+.focus-accent {
+  outline: none;
+}
+
+/* 移除所有按钮的边框和轮廓 */
+button:focus,
+button:focus-visible,
+.btn-primary:focus,
+.btn-primary:focus-visible,
+.btn-glass:focus,
+.btn-glass:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/*/* 确保导航栏按钮无边框 */
+nav button {
+  border: none !important;
+  outline: none !important;
+}
+
+/* 移除所有可能的焦点样式 */
+*:focus,
+*:focus-visible,
+*:focus-within {
+  outline: none !important;
+}
+
+/* 特别针对导航栏的所有交互元素 */
+nav a:focus,
+nav button:focus,
+nav a:focus-visible,
+nav button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 保留原有样式以兼容 - 更新为磨砂玻璃风格 */
+.glass-card {
+  background: rgba(138, 155, 143, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
+              0 0 0 0.5px rgba(255, 255, 255, 0.1) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-mint) 0%, var(--primary-jade) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 隐藏滚动条样式 */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* 按钮玻璃效果 */
+.btn-glass {
+  background: rgba(212, 180, 131, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08),
+              0 0 0 0.5px rgba(255, 255, 255, 0.08) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-glass:hover {
+  background: rgba(212, 180, 131, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.12),
+              0 0 0 0.5px rgba(255, 255, 255, 0.12) inset;
+}
+
+/* 输入框玻璃效果 */
+.input-glass {
+  background: rgba(122, 158, 159, 0.05);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-glass:focus {
+  background: rgba(122, 158, 159, 0.08);
+  box-shadow: 0 0 0 2px rgba(212, 180, 131, 0.3),
+              0 0 0 0.5px rgba(255, 255, 255, 0.1) inset;
+  outline: none;
+}
+.input-glass::placeholder {
+  color: var(--text-muted);
+}
+
+/* 导航栏玻璃效果 */
+.nav-glass {
+  background: rgba(122, 158, 159, 0.02);
+  backdrop-filter: blur(24px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(1.05);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  /* 移动端减少模糊度以提升性能 */
+  .card-base, .glass-effect, .glass-card, .glass-deep {
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+  }
+}
+
+/* 性能优化样式 */
+/* 启用GPU加速 */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 优化过渡性能 */
+* {
+  /* 只在需要时使用will-change */
+  will-change: auto;
+}
+
+/* 简化的模糊效果 - 用于性能优化 */
+.glass-effect-light {
+  background: rgba(138, 155, 143, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+}
+
+/* 减少动画复杂度 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+  }
+}
+
+/* 优化卡片悬浮效果 */
+.card-optimized {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  will-change: auto;
+}
+.card-optimized:hover {
+  transform: translateY(-2px);
+  will-change: transform, box-shadow;
+}
+
+/* 简化的阴影效果 */
+.shadow-optimized {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.shadow-optimized-hover:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+} 
