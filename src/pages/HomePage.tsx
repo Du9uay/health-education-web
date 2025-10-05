@@ -12,7 +12,7 @@ import DigitalAvatarPlayer from '../components/DigitalAvatarPlayer';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="py-12 space-y-16">
+    <div className="py-12 space-y-16 max-w-5xl mx-auto">
       {/* 课程标题区 */}
       <section className="text-center relative">
         <div className="liquid-card p-12 max-w-4xl mx-auto">
@@ -67,7 +67,7 @@ const HomePage: React.FC = () => {
           {/* 数字人播放器1 - 为什么要学习这节课 */}
           <DigitalAvatarPlayer
             videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYqXCNXgmu3.mov"
-            position={{ top: 0, right: '-16rem' }}
+            position={{ top: 0, right: '-10rem' }}
           />
         </motion.section>
 
@@ -256,7 +256,7 @@ const HomePage: React.FC = () => {
           {/* 数字人播放器2 - 为什么要关注大健康行业 */}
           <DigitalAvatarPlayer
             videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01GqpU.mov"
-            position={{ top: 380, right: '-16rem' }}
+            position={{ top: 380, right: '-10rem' }}
           />
         </motion.section>
 
@@ -498,7 +498,7 @@ const HomePage: React.FC = () => {
           {/* 数字人播放器3 - 为什么要分清企业类型 */}
           <DigitalAvatarPlayer
             videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01juX2.mov"
-            position={{ top: 200, right: '-16rem' }}
+            position={{ top: 200, right: '-10rem' }}
           />
         </motion.section>
 
@@ -671,7 +671,7 @@ const HomePage: React.FC = () => {
           {/* 数字人播放器4 - 关于岗位你该知道的是 */}
           <DigitalAvatarPlayer
             videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE013FSf.mov"
-            position={{ top: 200, right: '-16rem' }}
+            position={{ top: 200, right: '-10rem' }}
           />
         </motion.section>
 
@@ -948,7 +948,7 @@ const HomePage: React.FC = () => {
           {/* 数字人播放器5 - 通过学习，你能学到什么 */}
           <DigitalAvatarPlayer
             videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01mZiN.mov"
-            position={{ top: 300, right: '-16rem' }}
+            position={{ top: 300, right: '-10rem' }}
           />
         </motion.section>
 
