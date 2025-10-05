@@ -494,12 +494,6 @@ const HomePage: React.FC = () => {
               明确行业分工，才能精准定位未来发展方向
             </p>
           </motion.div>
-
-          {/* 数字人播放器3 - 为什么要分清企业类型 */}
-          <DigitalAvatarPlayer
-            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01juX2.mov"
-            position={{ top: 200, right: '-13rem' }}
-          />
         </motion.section>
 
         {/* 第三部分：关于岗位你该知道的是 */}
@@ -668,9 +662,9 @@ const HomePage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* 数字人播放器4 - 关于岗位你该知道的是 */}
+          {/* 数字人播放器3 - 为什么要分清企业类型（移至岗位板块） */}
           <DigitalAvatarPlayer
-            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE013FSf.mov"
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01juX2.mov"
             position={{ top: 200, right: '-13rem' }}
           />
         </motion.section>
@@ -945,15 +939,15 @@ const HomePage: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* 数字人播放器5 - 通过学习，你能学到什么 */}
+          {/* 数字人播放器4 - 关于岗位你该知道的是（移至课程板块） */}
           <DigitalAvatarPlayer
-            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01mZiN.mov"
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE013FSf.mov"
             position={{ top: 300, right: '-13rem' }}
           />
         </motion.section>
 
         {/* 第五部分：岗位晋升路径 */}
-        <motion.section className="mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <motion.section className="mb-20 relative" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <motion.div
             className="bg-gradient-to-r from-emerald-400/10 to-teal-500/10 rounded-3xl p-8 border border-emerald-200/40"
             whileHover={{ scale: 1.01 }}
@@ -1004,6 +998,12 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
           </motion.div>
+
+          {/* 数字人播放器5 - 通过学习，你能学到什么（移至岗位晋升路径板块） */}
+          <DigitalAvatarPlayer
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIUE01mZiN.mov"
+            position={{ top: 100, right: '-13rem' }}
+          />
         </motion.section>
 
       {/* 行动号召 */}
