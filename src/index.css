@@ -166,8 +166,8 @@ code {
 
 /* 健康指标卡片 */
 .health-card {
-  background: linear-gradient(135deg, 
-    rgba(134, 239, 172, 0.1) 0%, 
+  background: linear-gradient(135deg,
+    rgba(134, 239, 172, 0.1) 0%,
     rgba(147, 197, 253, 0.1) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -176,26 +176,6 @@ code {
   padding: 24px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-.health-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  animation: float 20s infinite linear;
-}
-@keyframes float {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /*/* 交互态统一样式 */

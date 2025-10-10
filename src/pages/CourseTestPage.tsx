@@ -230,45 +230,57 @@ const CourseTestPage: React.FC = () => {
                     </div>
 
                     <div className="space-y-2">
-                      {q.options.map((option) => (
-                        <label
-                          key={option}
-                          className={`flex items-center cursor-pointer p-3 rounded-lg transition-all ${
-                            showResults
-                              ? option[0] === q.correct
-                                ? 'bg-emerald-50 border-2 border-emerald-500'
-                                : selectedAnswers[q.id] === option[0] && option[0] !== q.correct
-                                ? 'bg-red-50 border-2 border-red-500'
-                                : 'bg-gray-50 border-2 border-gray-200'
-                              : 'hover:bg-emerald-50 border-2 border-gray-200 hover:border-emerald-300'
-                          }`}
-                        >
-                          <input
-                            type="radio"
-                            name={q.id}
-                            value={option[0]}
-                            checked={selectedAnswers[q.id] === option[0]}
-                            onChange={(e) => handleAnswerSelect(q.id, e.target.value)}
-                            className="mr-3 text-emerald-500 w-4 h-4"
-                            disabled={showResults}
-                          />
-                          <span className={`flex-1 ${
-                            showResults && option[0] === q.correct
-                              ? 'text-emerald-700 font-medium'
-                              : showResults && selectedAnswers[q.id] === option[0] && option[0] !== q.correct
-                              ? 'text-red-600'
-                              : 'text-gray-700'
-                          }`}>
-                            {option}
-                          </span>
-                          {showResults && option[0] === q.correct && (
-                            <CheckCircle className="w-5 h-5 text-emerald-500 ml-2" />
-                          )}
-                          {showResults && selectedAnswers[q.id] === option[0] && option[0] !== q.correct && (
-                            <XCircle className="w-5 h-5 text-red-500 ml-2" />
-                          )}
-                        </label>
-                      ))}
+                      {q.options.map((option) => {
+                        const optionKey = option[0];
+                        const isSelected = selectedAnswers[q.id] === optionKey;
+                        const isCorrect = optionKey === q.correct;
+
+                        return (
+                          <div
+                            key={option}
+                            onClick={() => !showResults && handleAnswerSelect(q.id, optionKey)}
+                            className={`flex items-center p-3 rounded-lg transition-all ${
+                              !showResults ? 'cursor-pointer' : 'cursor-default'
+                            } ${
+                              showResults
+                                ? isCorrect
+                                  ? 'bg-emerald-50 border-2 border-emerald-500'
+                                  : isSelected && !isCorrect
+                                  ? 'bg-red-50 border-2 border-red-500'
+                                  : 'bg-gray-50 border-2 border-gray-200'
+                                : isSelected
+                                ? 'bg-emerald-50 border-2 border-emerald-400'
+                                : 'hover:bg-emerald-50 border-2 border-gray-200 hover:border-emerald-300'
+                            }`}
+                          >
+                            <input
+                              type="radio"
+                              name={q.id}
+                              value={optionKey}
+                              checked={isSelected}
+                              onChange={() => {}}
+                              className="mr-3 text-emerald-500 w-4 h-4 pointer-events-none"
+                              disabled={showResults}
+                              readOnly
+                            />
+                            <span className={`flex-1 ${
+                              showResults && isCorrect
+                                ? 'text-emerald-700 font-medium'
+                                : showResults && isSelected && !isCorrect
+                                ? 'text-red-600'
+                                : 'text-gray-700'
+                            }`}>
+                              {option}
+                            </span>
+                            {showResults && isCorrect && (
+                              <CheckCircle className="w-5 h-5 text-emerald-500 ml-2" />
+                            )}
+                            {showResults && isSelected && !isCorrect && (
+                              <XCircle className="w-5 h-5 text-red-500 ml-2" />
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
 
                     {showResults && (
