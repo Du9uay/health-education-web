@@ -376,9 +376,9 @@ const ManagementProcessPage: React.FC = () => {
             上一章节
           </button>
         </Link>
-        <Link to="/course-summary">
+        <Link to="/course-test">
           <button className="health-btn flex items-center">
-            进入课程总结
+            进入课堂测试
             <ArrowRight className="w-5 h-5 ml-2" />
           </button>
         </Link>
