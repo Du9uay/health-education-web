@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/health-education-web/static/css/main.43693e55.css",
-    "main.js": "/health-education-web/static/js/main.4abd80b4.js",
+    "main.css": "/health-education-web/static/css/main.da8e6d73.css",
+    "main.js": "/health-education-web/static/js/main.193ca79d.js",
     "index.html": "/health-education-web/index.html",
-    "main.43693e55.css.map": "/health-education-web/static/css/main.43693e55.css.map",
-    "main.4abd80b4.js.map": "/health-education-web/static/js/main.4abd80b4.js.map"
+    "main.da8e6d73.css.map": "/health-education-web/static/css/main.da8e6d73.css.map",
+    "main.193ca79d.js.map": "/health-education-web/static/js/main.193ca79d.js.map"
   },
   "entrypoints": [
-    "static/css/main.43693e55.css",
-    "static/js/main.4abd80b4.js"
+    "static/css/main.da8e6d73.css",
+    "static/js/main.193ca79d.js"
   ]
 }
